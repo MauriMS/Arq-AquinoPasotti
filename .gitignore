@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Carpetas
+esquemas_web_aquinopasotti/
+img_aquinopasotti/

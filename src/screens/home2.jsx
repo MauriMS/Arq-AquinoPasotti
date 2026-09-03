@@ -25,7 +25,7 @@ function Home2() {
           slidesPerView={1}
           navigation={true} 
           pagination={{ clickable: true }} 
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
           loop={true}
           className="mi-swiper"
         >
