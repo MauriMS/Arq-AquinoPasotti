@@ -1,15 +1,14 @@
 // Nav.jsx
 import { Link } from 'react-router-dom';
-import logo from "../assets/logo1.jpg"; // Reemplazá por la ruta real de tu logo
+import logo from "../assets/logo1.jpg"; 
 import './Nav.css';
 
 function Nav() {
   return (
     <nav className="navbar">
       
-      <div className="brand-group"> {/* Contenedor flex para logo y texto */}
+      <div className="brand-group"> 
         
-        {/* Usamos el logo real dentro del Link */}
         <Link to="/" className="logo-link">
           <img src={logo} alt="Aquino Pasotti Logo" className="logo-img" />
         </Link>

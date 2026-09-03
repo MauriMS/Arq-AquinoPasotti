@@ -22,7 +22,7 @@
 /* =========================================
    EFECTO DE LAS FLECHAS
    ========================================= */
-/* Ocultamos las flechas por defecto y las hacemos blancas */
+
 .swiper-button-next,
 .swiper-button-prev {
   opacity: 0;
@@ -39,9 +39,9 @@
 /* =========================================
    ESTILOS DE LOS PUNTITOS
    ========================================= */
-/* Hacemos que los puntitos sean blancos para que se vean bien sobre las imágenes */
+
 .swiper-pagination {
-  bottom: 45px !important; /* Sube los puntitos para que no queden pegados al piso */
+  bottom: 45px !important; 
   z-index: 50 !important;
 }
 
@@ -63,15 +63,15 @@
    ========================================= */
 .home-footer {
   position: absolute;
-  bottom: 10px; /* Separacion desde el borde inferior de la pantalla */
+  bottom: 10px; 
   left: 0;
   width: 100%;
   text-align: center;
-  z-index: 50; /* Para que flote por encima de la foto del carrusel */
+  z-index: 50; 
   
   font-family: 'Arial', sans-serif;
   font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.8); /* Blanco sutil */
+  color: rgba(0, 0, 0, 0.8); 
   letter-spacing: 0.5px;
-  pointer-events: none; /* Hace que el texto no interfiera si pasas el mouse por encima */
+  pointer-events: none; 
 }

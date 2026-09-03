@@ -10,12 +10,11 @@ import foto1 from '../assets/1-vista-3d.jpeg';
 import foto2 from '../assets/Arq.webp';
 import foto3 from '../assets/Arq1.jpg';
 
-import './home2.css'; // Tus estilos específicos para esta versión
+import './home2.css'; 
 
 function Home2() {
   return (
     <div className="home2-container">
-      {/* El carrusel ahora vive por debajo, sin el Nav flotando encima */}
       <div className="carrusel-seccion">
         <Swiper
           modules={[Pagination, Navigation, Autoplay, EffectFade]}

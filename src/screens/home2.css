@@ -1,13 +1,11 @@
 .home2-container {
   width: 100%;
-  /* Si tu Nav global de App.jsx es fijo o tiene cierta altura, 
-     le das un margin-top para que empiece justo abajo */
-  margin-top: 80px; /* Ajustá este valor según lo que mida tu Nav */
+  margin-top: 80px; /* altura del nav */
 }
 
 .carrusel-seccion {
   width: 100vw;
-  height: calc(100vh - 80px); /* Restamos la altura del nav para que no se pase del alto */
+  height: calc(100vh - 80px); 
   position: relative;
 }
 
@@ -22,7 +20,7 @@
   object-fit: cover;
 }
 
-/* Reutilizamos los estilos de las flechas y puntitos */
+
 .swiper-button-next,
 .swiper-button-prev {
   color: white !important;
