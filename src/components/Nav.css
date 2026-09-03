@@ -1,0 +1,84 @@
+/* =========================================
+   CONTENEDOR PRINCIPAL DEL NAV
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem; /* Ajuste ligero del padding vertical */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  box-sizing: border-box;
+  z-index: 999;
+  font-family: 'Arial', sans-serif;
+}
+
+/* =========================================
+   GRUPO IZQUIERDO (Logo y Textos)
+   ========================================= */
+.brand-group {
+  display: flex;
+  flex-direction: row; /* Obliga a que se pongan uno al lado del otro */
+  align-items: center; /* Los centra verticalmente */
+  gap: 15px; /* Separación entre la imagen y el texto */
+}
+
+.logo-link {
+  display: block; /* Asegura que el link ocupe espacio si no hay imagen */
+}
+
+/* ESTE ES EL CAMBIO CLAVE PARA LA IMAGEN */
+.logo-img {
+  max-width: 120px; /* Limita el ancho máximo del logo */
+  max-height: 50px; /* Limita la altura máxima del logo */
+  width: auto; /* Mantiene la proporción */
+  height: auto; /* Mantiene la proporción */
+  object-fit: contain; /* Asegura que la imagen no se estire y se contenga */
+  display: block; /* Evita espacios en blanco debajo de la imagen */
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text .title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.brand-text .subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: -2px;
+}
+
+/* =========================================
+   GRUPO DERECHO (Enlaces)
+   ========================================= */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #888;
+}
