@@ -1,0 +1,77 @@
+/* =========================================
+   ESTRUCTURA DEL CARRUSEL
+   ========================================= */
+.carrusel-pantalla-completa {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.mi-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.foto-carrusel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   EFECTO DE LAS FLECHAS
+   ========================================= */
+/* Ocultamos las flechas por defecto y las hacemos blancas */
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: white !important;
+  z-index: 50 !important;
+}
+
+.mi-swiper:hover .swiper-button-next,
+.mi-swiper:hover .swiper-button-prev {
+  opacity: 1;
+}
+
+/* =========================================
+   ESTILOS DE LOS PUNTITOS
+   ========================================= */
+/* Hacemos que los puntitos sean blancos para que se vean bien sobre las imágenes */
+.swiper-pagination {
+  bottom: 45px !important; /* Sube los puntitos para que no queden pegados al piso */
+  z-index: 50 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  opacity: 0.5 !important;
+  width: 8px;
+  height: 8px;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+/* =========================================
+   FOOTER FLOTANTE
+   ========================================= */
+.home-footer {
+  position: absolute;
+  bottom: 10px; /* Separacion desde el borde inferior de la pantalla */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 50; /* Para que flote por encima de la foto del carrusel */
+  
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.8); /* Blanco sutil */
+  letter-spacing: 0.5px;
+  pointer-events: none; /* Hace que el texto no interfiera si pasas el mouse por encima */
+}
