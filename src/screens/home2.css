@@ -1,11 +1,11 @@
 .home2-container {
   width: 100%;
-  margin-top: 80px; /* altura del nav */
+  margin-top: 70px; /* altura del nav */
 }
 
 .carrusel-seccion {
   width: 100vw;
-  height: calc(100vh - 80px); 
+  height: calc(100vh - 70px); 
   position: relative;
 }
 
@@ -34,4 +34,28 @@
 .swiper-pagination-bullet-active {
   background-color: white !important;
   opacity: 1 !important;
+}
+
+/* =========================================
+   FOOTER FLOTANTE
+   ========================================= */
+.home-footer {
+  position: absolute;
+  bottom: 10px; 
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 50; 
+  
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: 0.5px;
+  pointer-events: none; 
+}
+
+.footer-span{
+  padding: 5px 10px;
+  /* background-color: #8d8a8a4d; */
+  border-radius: 10px;
 }

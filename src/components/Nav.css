@@ -4,16 +4,27 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem; 
+  align-items: center; /* Esto ahora centrará todo perfectamente en la franja blanca */
+  
+  height: 70px; /* CLAVE: Fijamos la altura de la parte blanca */
+  padding: 0 4rem; /* CLAVE: Sacamos el padding vertical para que no empuje las cosas */
+  
   position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  
   box-sizing: border-box;
   z-index: 999;
   font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+.nav-transparent {
+  background-color: transparent;
+}
+
+.nav-solid {
+  background-color: rgba(215, 210, 210, 0.179);
 }
 
 /* =========================================
@@ -22,27 +33,27 @@
 .brand-group {
   display: flex;
   flex-direction: row; 
-  align-items: center; 
+  align-items: center; /* CLAVE: Centra el texto 'aquino pasotti' exactamente con el logo gris */
   gap: 15px; 
 }
 
 .logo-link {
-  display: block; 
+  display: flex;
+  align-items: center;
 }
 
-/* logo */
 .logo-img {
-  max-width: 120px; 
-  max-height: 50px; 
-  width: auto; 
-  height: auto; 
-  object-fit: contain; 
-  display: block; 
+  width: 55px; 
+  height: 55px;
+  border-radius: 4px 10px;
+  
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-top: 4px; /* Ajuste milimétrico para que el texto se alinee ópticamente con el logo */
 }
 
 .brand-text .title {
@@ -51,21 +62,30 @@
   letter-spacing: 1px;
   color: #1a1a1a;
   text-decoration: none;
+  line-height: 1.1;
 }
 
 .brand-text .subtitle {
   font-size: 0.8rem;
   font-weight: 500;
   color: #333;
-  margin-top: -2px;
+  margin-top: 2px;
 }
 
 /* =========================================
-   GRUPO DERECHO (Enlaces)
+   GRUPO DERECHO (Enlaces e Idioma)
    ========================================= */
+.nav-right {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 40px; 
+}
+
 .nav-links {
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 30px;
   margin: 0;
   padding: 0;
@@ -76,9 +96,64 @@
   color: #1a1a1a;
   font-size: 0.95rem;
   font-weight: 500;
+  position: relative; 
+  padding-bottom: 2px; 
   transition: color 0.2s;
 }
 
+/* Subrayado hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .nav-links a:hover {
+  color: #555;
+}
+
+/* =========================================
+   SELECTOR DE IDIOMA
+   ========================================= */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888; 
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.lang-btn:hover {
+  color: #1a1a1a;
+}
+
+.lang-btn.active {
+  color: #1a1a1a; 
+}
+
+.lang-separator {
+  font-size: 0.75rem;
   color: #888;
+  cursor: default;
 }

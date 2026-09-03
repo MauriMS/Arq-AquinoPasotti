@@ -40,6 +40,9 @@ function Home2() {
           </SwiperSlide>
         </Swiper>
       </div>
+      <footer className="home-footer">
+        <span className="footer-span">©2026 aquino pasotti</span>
+      </footer>
     </div>
   );
 }
