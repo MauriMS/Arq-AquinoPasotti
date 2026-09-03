@@ -5,11 +5,11 @@ import './Nav.css';
 function Nav() {
   const location = useLocation();
   
-  // Comprobamos si la ruta actual es exactamente la home principal
+  
   const isHome = location.pathname === '/';
 
   return (
-    // Si isHome es true, usa 'nav-transparent', sino usa 'nav-solid'
+    
     <nav className={`navbar ${isHome ? 'nav-transparent' : 'nav-solid'}`}>
       
       <div className="brand-group"> 

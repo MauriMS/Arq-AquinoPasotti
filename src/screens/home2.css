@@ -1,6 +1,6 @@
 .home2-container {
   width: 100%;
-  margin-top: 70px; /* altura del nav */
+  margin-top: 70px; 
 }
 
 .carrusel-seccion {
@@ -36,9 +36,7 @@
   opacity: 1 !important;
 }
 
-/* =========================================
-   FOOTER FLOTANTE
-   ========================================= */
+/* footer */
 .home-footer {
   position: absolute;
   bottom: 10px; 

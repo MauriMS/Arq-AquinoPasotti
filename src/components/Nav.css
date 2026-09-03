@@ -1,13 +1,11 @@
-/* =========================================
-   CONTENEDOR PRINCIPAL DEL NAV
-   ========================================= */
+/* cont nav*/
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Esto ahora centrará todo perfectamente en la franja blanca */
+  align-items: center; 
   
-  height: 70px; /* CLAVE: Fijamos la altura de la parte blanca */
-  padding: 0 4rem; /* CLAVE: Sacamos el padding vertical para que no empuje las cosas */
+  height: 70px; 
+  padding: 0 4rem; 
   
   position: absolute; 
   top: 0;
@@ -27,13 +25,11 @@
   background-color: rgba(215, 210, 210, 0.179);
 }
 
-/* =========================================
-   GRUPO IZQUIERDO (Logo y Textos)
-   ========================================= */
+/* grupo logo, titulo */
 .brand-group {
   display: flex;
   flex-direction: row; 
-  align-items: center; /* CLAVE: Centra el texto 'aquino pasotti' exactamente con el logo gris */
+  align-items: center; 
   gap: 15px; 
 }
 
@@ -53,7 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 4px; /* Ajuste milimétrico para que el texto se alinee ópticamente con el logo */
+  margin-top: 4px; 
 }
 
 .brand-text .title {
@@ -72,9 +68,7 @@
   margin-top: 2px;
 }
 
-/* =========================================
-   GRUPO DERECHO (Enlaces e Idioma)
-   ========================================= */
+/*  grupo links derecho*/
 .nav-right {
   display: flex;
   flex-direction: row; 
@@ -101,7 +95,7 @@
   transition: color 0.2s;
 }
 
-/* Subrayado hover */
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -121,9 +115,7 @@
   color: #555;
 }
 
-/* =========================================
-   SELECTOR DE IDIOMA
-   ========================================= */
+/* btn de idiomas */
 .lang-switcher {
   display: flex;
   align-items: center;
