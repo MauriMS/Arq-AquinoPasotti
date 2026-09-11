@@ -1,0 +1,188 @@
+.off2-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 130px; 
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  color: #666; 
+}
+
+
+.off2-container {
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 0 20px; 
+}
+
+
+.off2-title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+
+.off2-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+
+.off2-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #777;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+
+.off2-list {
+  list-style-type: circle; 
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.off2-list li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.off2-list li strong {
+  font-weight: 600;
+  color: #555;
+}
+
+
+.off2-quote {
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+}
+
+
+/* Img de los arquitectos */
+
+.off2-divider-line {
+  border: none;
+  border-top: 1px solid #333; 
+  margin: 60px 0; 
+}
+
+.off2-architects-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.off2-architect-item {
+  position: relative;
+  width: 30%;
+}
+
+.off2-architect-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 3px solid #555;
+  box-sizing: border-box;
+}
+
+.off2-architect-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.off2-architect-item:hover .off2-architect-img {
+  transform: scale(1.06);
+}
+
+/* Tooltip que aparece arriba de la foto al hacer hover, alineado al borde izquierdo */
+.off2-architect-caption {
+  position: absolute;
+  left: 7px;
+  bottom: calc(100% + 11px); /* mismo punto de referencia que la flecha: su base */
+  background-color: #ffffff;
+  border: 2px solid #555;
+  border-radius: 5px;
+  padding: 10px 30px;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 5;
+}
+
+.off2-architect-item:hover .off2-architect-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.off2-architect-caption span {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #444;
+  letter-spacing: 0.3px;
+}
+
+/* Flecha independiente, centrada respecto al ancho de la foto, pegada a la base de la caja */
+.off2-architect-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px); /* mismo valor que .off2-architect-caption: quedan pegadas */
+  transform: translateX(-50%) translateY(4px);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 11px solid #555;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 5;
+}
+
+.off2-architect-arrow::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid #ffffff;
+}
+
+.off2-architect-item:hover .off2-architect-arrow {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+.off2_footer {
+  position: relative;
+  bottom: 10px; 
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 50; 
+  
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.8); 
+  letter-spacing: 0.5px;
+  pointer-events: none; 
+}
