@@ -59,9 +59,24 @@ function Oficina() {
         <hr className="divider-line" />
         
         <div className="architects-grid">
-          <img src={arq1} alt="Arquitecto 1" className="architect-img" />
-          <img src={arq2} alt="Arquitecto 2" className="architect-img" />
-          <img src={arq3} alt="Arquitecto 3" className="architect-img" />
+          <div className="architect-item">
+            <img src={arq1} alt="Arquitecto 1" className="architect-img" />
+            <div className="architect-caption">
+              <span>Arq. Nombre Apellido</span>
+            </div>
+          </div>
+          <div className="architect-item">
+            <img src={arq2} alt="Arquitecto 2" className="architect-img" />
+            <div className="architect-caption">
+              <span>Arq. Nombre Apellido</span>
+            </div>
+          </div>
+          <div className="architect-item">
+            <img src={arq3} alt="Arquitecto 3" className="architect-img" />
+            <div className="architect-caption">
+              <span>Arq. Nombre Apellido</span>
+            </div>
+          </div>
         </div>
 
         <hr className="divider-line" />
