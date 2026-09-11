@@ -1,0 +1,189 @@
+.detalle-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Panel de información (ahora a la derecha) */
+.detalle-info {
+  width: 38%;
+  min-width: 320px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 110px 50px 60px;
+  color: #666;
+  overflow-y: auto;
+}
+
+.detalle-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9rem;
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  margin-bottom: 34px;
+  transition: color 0.2s ease;
+}
+
+.detalle-back:hover {
+  color: #111111;
+}
+
+.detalle-titulo {
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.detalle-field {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.detalle-field strong {
+  color: #444;
+  font-weight: 700;
+}
+
+.detalle-memoria-title {
+  margin-top: 34px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.detalle-memoria p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* Carrusel (ahora a la izquierda) */
+.detalle-carousel {
+  /* margin: arriba derecha abajo izquierda */
+  /* Aumentamos de 0.5rem a 2rem el margen izquierdo para separar más */
+  margin: 6rem 0 6rem 1.3rem; 
+  
+  position: relative;
+  width: 65%;
+  
+  /* El alto total (100vh) menos la suma del margen superior (6rem) e inferior (6rem) */
+  height: calc(100vh - 7.5rem); 
+  
+  background-color: #111111;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.detalle-carousel-img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detalle-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.detalle-carousel-btn:hover {
+  background-color: #ffffff;
+}
+
+.detalle-carousel-btn.prev {
+  left: 22px;
+}
+
+.detalle-carousel-btn.next {
+  right: 22px;
+}
+
+.detalle-carousel-counter {
+  position: absolute;
+  bottom: 20px;
+  right: 22px;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.detalle-thumbs {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+  display: flex;
+  gap: 6px;
+  max-width: 55%;
+  overflow-x: auto;
+}
+
+.detalle-thumb {
+  width: 52px;
+  height: 38px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.55;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.detalle-thumb.active {
+  opacity: 1;
+  border-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .detalle-page {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .detalle-info {
+    width: 100%;
+    border-left: 1rem solid #111111;
+    height: auto;
+    overflow-y: visible;
+    padding: 100px 24px 30px;
+  }
+
+  .detalle-carousel {
+    width: 100%;
+    height: 60vh;
+  }
+}
