@@ -1,0 +1,131 @@
+.novedades-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 130px;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  color: #666;
+}
+
+.novedades-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.novedades-title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.novedades-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.novedad-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 14px 20px;
+  margin: 10px 0px;
+  background-color: #cac8c8df;
+  border-bottom: 1px solid #ddd;
+  gap: 40px;
+}
+
+.novedad-card:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.novedad-texto {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.novedad-img-wrap {
+  flex: 0 0 38%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.novedad-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.novedad-card:hover{
+    background-color: #afafafdd;
+    transform: scale(1.02);
+    transition: transform 0.4s ease;
+}
+.novedad-card:hover .novedad-img {
+  transform: scale(1.05);
+  
+}
+
+.novedad-fecha {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.novedad-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.novedad-card:hover .novedad-titulo {
+  color: #111111;
+}
+
+.novedad-resumen {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+.novedad-leer-mas {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 700px) {
+  .novedad-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 26px 0;
+  }
+
+  .novedad-img-wrap {
+    flex: none;
+    width: 100%;
+    order: -1;
+  }
+
+  .novedades-title {
+    font-size: 2.4rem;
+  }
+}
