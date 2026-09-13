@@ -12,7 +12,8 @@ export const novedades = [
     fecha: '2026-08-10',
     resumen: 'Arrancamos con los trabajos de fundación de nuestro nuevo proyecto en Pilar.',
     contenido:
-      'Texto completo de la novedad. Acá va la descripción larga: contexto de la obra, hitos alcanzados, fotos del avance y cualquier detalle que quieras compartir sobre el proyecto. Podés escribir varios párrafos.',
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
+
     imagen: stock(1029),
   },
   {
@@ -21,7 +22,7 @@ export const novedades = [
     fecha: '2026-06-22',
     resumen: 'Presentamos nuestros últimos proyectos residenciales ante colegas y clientes.',
     contenido:
-      'Texto completo de la novedad. Contá cómo fue la participación en la feria, qué proyectos se expusieron, fotos del stand y devoluciones recibidas.',
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
     imagen: stock(1050),
   },
   {
@@ -30,7 +31,7 @@ export const novedades = [
     fecha: '2026-04-15',
     resumen: 'Uno de nuestros proyectos fue distinguido por su integración con el entorno natural.',
     contenido:
-      'Texto completo de la novedad. Detallá el premio recibido, el jurado, y qué aspectos del proyecto fueron destacados.',
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
     imagen: stock(1060),
   },
   {
@@ -38,8 +39,10 @@ export const novedades = [
     titulo: 'Ampliamos el equipo de arquitectos',
     fecha: '2026-02-03',
     resumen: 'Sumamos nuevos profesionales para acompañar el crecimiento del estudio.',
-    contenido:
-      'Texto completo de la novedad. Presentá a los nuevos integrantes del equipo y sus roles.',
+    contenido: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.'
+      ,
     imagen: stock(1074),
   },
 ];
+
+
