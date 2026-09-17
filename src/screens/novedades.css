@@ -35,7 +35,7 @@
   cursor: pointer;
   padding: 14px 20px;
   margin: 10px 0px;
-  background-color: #cac8c8df;
+  background-color: #c5c5c573;
   border-bottom: 1px solid #ddd;
   gap: 40px;
 }
@@ -67,7 +67,7 @@
 }
 
 .novedad-card:hover{
-    background-color: #afafafdd;
+    background-color: #c5c5c586;
     transform: scale(1.02);
     transition: transform 0.4s ease;
 }
