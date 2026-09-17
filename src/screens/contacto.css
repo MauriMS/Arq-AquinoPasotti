@@ -91,7 +91,7 @@
 .contacto-footer-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 34px;
   padding: 0 1rem;
   padding-bottom: 14px;
