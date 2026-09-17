@@ -7,7 +7,7 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Panel de información (ahora a la derecha) */
+/* detalle del proyecto */
 .detalle-info {
   width: 38%;
   min-width: 320px;
@@ -73,28 +73,140 @@
   color: #666;
 }
 
-/* Carrusel (ahora a la izquierda) */
+/* Carrusel de fotos*/
 .detalle-carousel {
-  /* margin: arriba derecha abajo izquierda */
-  /* Aumentamos de 0.5rem a 2rem el margen izquierdo para separar más */
-  margin: 6rem 0 6rem 1.3rem; 
-  
   position: relative;
-  width: 65%;
-  
-  /* El alto total (100vh) menos la suma del margen superior (6rem) e inferior (6rem) */
-  height: calc(100vh - 7.5rem); 
-  
+  width: 62%;
+  height: 100vh;
   background-color: #111111;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .detalle-carousel-img {
-    width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.detalle-carousel-img-clickable {
+  cursor: zoom-in;
+}
+
+/* fotos en pantalla completa */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 90px 110px;
+  box-sizing: border-box;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2002;
+}
+
+.lightbox-counter {
+  position: absolute;
+  top: 24px;
+  left: 26px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 2001;
+}
+
+.lightbox-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-btn.prev {
+  left: 24px;
+}
+
+.lightbox-btn.next {
+  right: 24px;
+}
+
+.lightbox-thumbs {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  max-width: 90%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.lightbox-thumb {
+  width: 64px;
+  height: 46px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.lightbox-thumb.active {
+  opacity: 1;
+  border-color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .lightbox {
+    padding: 50px 20px 100px;
+  }
+
+  .lightbox-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
 }
 
 .detalle-carousel-btn {
@@ -176,7 +288,6 @@
 
   .detalle-info {
     width: 100%;
-    border-left: 1rem solid #111111;
     height: auto;
     overflow-y: visible;
     padding: 100px 24px 30px;
