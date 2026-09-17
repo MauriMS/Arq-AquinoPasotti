@@ -1,0 +1,27 @@
+.legales-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 130px;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  color: #666;
+}
+
+.legales-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.legales-title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 34px;
+}
+
+.legales-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
