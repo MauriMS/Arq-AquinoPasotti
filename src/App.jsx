@@ -9,6 +9,7 @@ import Off2 from "./screens/pruebas/off2.jsx";
 import Novedades from "./screens/novedades.jsx";
 import NovedadDetalle from "./screens/novedadDetalle.jsx";
 import Contacto from "./screens/contacto.jsx";
+import Legales from "./screens/legales.jsx";
 import Home2 from "./screens/home2";
 import Nav from "./components/Nav.jsx";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/novedades" element={<Novedades></Novedades>}></Route>
         <Route path="/novedades/:id" element={<NovedadDetalle />}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
+        <Route path="/legales" element={<Legales />}></Route>
       </Routes>
     </BrowserRouter>
   );
