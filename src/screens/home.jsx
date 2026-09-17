@@ -1,4 +1,4 @@
-import Nav from "../components/Nav.jsx";
+
 import "./home.css";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
