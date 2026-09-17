@@ -1,47 +1,27 @@
-// TODO: reemplazar las fotos de muestra (picsum.photos) por las imágenes reales de cada
-// novedad, y completar título, fecha, resumen y contenido.
-// Para usar fotos propias: importalas (import foto from '../assets/...') y usá la variable
-// en vez de la URL de stock.
 
-const stock = (id, w = 1000, h = 650) => `https://picsum.photos/id/${id}/${w}/${h}`;
+
+import img1 from '../assets/img-novedades/1-nazca2005.jpg'
+import img2 from '../assets/img-novedades/casa-energetica.png'
 
 export const novedades = [
   {
-    id: 'nueva-obra-casa-tres-patios',
-    titulo: 'Comenzó la construcción de Casa Tres Patios',
+    id: 'nueva-naza',
+    titulo: 'Comenzó la construcción de nazca',
     fecha: '2026-08-10',
-    resumen: 'Arrancamos con los trabajos de fundación de nuestro nuevo proyecto en Pilar.',
+    resumen: 'Arrancamos con los trabajos de fundación de nuestro nuevo proyecto en desierto de nazca (400km al sur de lima), perú.',
     contenido:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
 
-    imagen: stock(1029),
+    imagen: img1,
   },
   {
-    id: 'estudio-en-feria-arquitectura',
-    titulo: 'Participamos de la Feria de Arquitectura del Litoral',
+    id: 'curso',
+    titulo: 'Completamos el curso de electricidad de viviendas',
     fecha: '2026-06-22',
-    resumen: 'Presentamos nuestros últimos proyectos residenciales ante colegas y clientes.',
+    resumen: 'Presentamos nuestra última certificación.',
     contenido:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
-    imagen: stock(1050),
-  },
-  {
-    id: 'premio-diseno-sustentable',
-    titulo: 'Reconocimiento por diseño sustentable',
-    fecha: '2026-04-15',
-    resumen: 'Uno de nuestros proyectos fue distinguido por su integración con el entorno natural.',
-    contenido:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.',
-    imagen: stock(1060),
-  },
-  {
-    id: 'ampliacion-equipo',
-    titulo: 'Ampliamos el equipo de arquitectos',
-    fecha: '2026-02-03',
-    resumen: 'Sumamos nuevos profesionales para acompañar el crecimiento del estudio.',
-    contenido: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letrasets Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.'
-      ,
-    imagen: stock(1074),
+      'La Etiqueta de Eficiencia Energética es un documento en el que figura una escala de letras desde la “A” (el mayor nivel de eficiencia energética) hasta la “G” (el menor nivel de eficiencia energética), que determina la Clase de Eficiencia Energética de una vivienda asociada a un rango de valores del Índice de Prestaciones Energéticas que varía para cada región del país.',
+    imagen: img2,
   },
 ];
 
