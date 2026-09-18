@@ -18,7 +18,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Arq-AquinoPasotti">
       <Nav></Nav>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
