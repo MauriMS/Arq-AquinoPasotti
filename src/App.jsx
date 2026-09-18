@@ -18,7 +18,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/Arq-AquinoPasotti">
+    <HashRouter>
       <Nav></Nav>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -33,7 +33,7 @@ function App() {
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route path="/legales" element={<Legales />}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
