@@ -154,6 +154,15 @@
 .contacto-field-value p:last-child {
   margin-bottom: 0;
 }
+.contacto-mail-link {
+  color: inherit; 
+  text-decoration: none; 
+  transition: color 0.2s;
+}
+
+.contacto-mail-link:hover {
+  color: #888; 
+}
 
 @media (max-width: 900px) {
   .contacto-lower {

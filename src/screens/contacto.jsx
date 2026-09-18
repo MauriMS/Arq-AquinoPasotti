@@ -31,12 +31,12 @@ function Contacto() {
 
         <div className="contacto-map">
           
-          <iframe
-            title="Ubicación"
-            src="https://www.google.com/maps?q=Resistencia,Chaco,Argentina&output=embed"
-            loading="lazy"
-            allowFullScreen
-          ></iframe>
+        <iframe
+          title="Ubicación"
+          src="https://www.google.com/maps?q=San+Lorenzo+386,+Resistencia,+Chaco&output=embed&iwloc=B"
+          loading="lazy"
+          allowFullScreen
+        ></iframe>
         </div>
 
         <div className="contacto-info">
@@ -79,12 +79,18 @@ function Contacto() {
                 <p>+54 9 490 0180 (en)</p>
               </div>
             </div>
-
+            
             <div className="contacto-field-row">
               <span className="contacto-field-label">mail:</span>
               <div className="contacto-field-value">
-                
-                <p>info@aquinopasotti.com</p>
+                <a 
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=info@aquinopasotti.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contacto-mail-link"
+                >
+                  info@aquinopasotti.com
+                </a>
               </div>
             </div>
           </div>
