@@ -8,4 +8,11 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  base: '/Arq-AquinoPasotti/',
+  build: {
+    outDir: 'docs' 
+  }
 })
+
+
+
