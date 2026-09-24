@@ -1,10 +1,13 @@
 .proyectos-page {
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding-top: 130px;
   background-color: #ffffff;
   font-family: 'Arial', sans-serif;
   color: #666;
+
 }
 
 .proyectos-container {
@@ -72,6 +75,20 @@
   text-transform: uppercase;
   text-align: center;
   padding: 0 14px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.8); 
+  letter-spacing: 0.5px;
+  pointer-events: none; 
+  padding-bottom: 10px; /* Un poquito más de respiro abajo */
+  
+  /* NUEVO: Empuja el footer hacia el final del espacio disponible */
+  margin-top: auto; 
 }
 
 @media (max-width: 900px) {
