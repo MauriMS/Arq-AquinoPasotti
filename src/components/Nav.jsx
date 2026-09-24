@@ -6,6 +6,11 @@ import './Nav.css';
 // Sub-menú que aparece debajo del nav principal en ciertas secciones.
 // Para agregar otra sección con su propio submenú, sumá una entrada acá:
 
+const SUBNAV_PROYECTOS = [
+  { label: 'arquitectura', to: '/proyectos/arquitectura' },
+  { label: 'ingeniería', to: '/proyectos/ingenieria' },
+];
+
 const SUBNAV_MAP = {
   '/oficina': [
     { label: 'oficina', to: '/oficina' },
@@ -15,12 +20,30 @@ const SUBNAV_MAP = {
     { label: 'oficina', to: '/oficina' },
     { label: 'servicios', to: '/servicios' },
   ],
+  '/legales':[
+    { label: 'legales', to: './términos y condiciones legales.pdf', esPdf: true },
+  ],
+  '/proyectos': SUBNAV_PROYECTOS,
+  '/proyectos/arquitectura': SUBNAV_PROYECTOS,
+  '/proyectos/ingenieria': SUBNAV_PROYECTOS,
 };
 
 function Nav() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isContacto = location.pathname === '/contacto';
   const subNavItems = SUBNAV_MAP[location.pathname];
+
+  // Guardamos el último submenú con contenido para que, al salir de la página,
+  // la animación de cierre no se quede sin links mientras colapsa.
+  const [displayedSubNav, setDisplayedSubNav] = useState(subNavItems || []);
+  const subnavOpen = Boolean(subNavItems);
+
+  useEffect(() => {
+    if (subNavItems) {
+      setDisplayedSubNav(subNavItems);
+    }
+  }, [location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -59,7 +82,7 @@ function Nav() {
   }, [lastScrollY, isHome]);
 
   return (
-    <nav className={`navbar ${isHome ? 'nav-transparent' : 'nav-solid'} ${isVisible ? '' : 'nav-hidden'}`}>
+    <nav className={`navbar ${isHome || isContacto ? 'nav-transparent' : 'nav-solid'} ${isVisible ? '' : 'nav-hidden'}`}>
 
       <div className="navbar-row">
         <div className="brand-group">
@@ -89,22 +112,35 @@ function Nav() {
         </div>
       </div>
 
-      {subNavItems && (
-        <div className="navbar-subrow">
-          <ul className="subnav-links">
-            {subNavItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className={location.pathname === item.to ? 'active' : ''}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <div className={`navbar-subrow-wrap ${subnavOpen ? 'open' : ''}`}>
+        <div className="navbar-subrow-inner">
+          <div className="navbar-subrow">
+            {/* El key fuerza a React a recrear la lista y disparar la animación de CSS */}
+            <ul className="subnav-links" key={location.pathname}>
+              {displayedSubNav.map((item) => (
+                <li key={item.to}>
+                  {item.esPdf ? (
+                    <a
+                      href={item.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.to}
+                      className={location.pathname === item.to ? 'active' : ''}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      )}
+      </div>
 
     </nav>
   );
