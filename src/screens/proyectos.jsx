@@ -19,7 +19,7 @@ function Proyectos() {
           ))}
         </div>
       </div>
-      <footer className="contacto-footer">
+      <footer className="footer">
         <span>©2026 aquino pasotti</span>
       </footer>
     </div>

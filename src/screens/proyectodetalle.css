@@ -68,6 +68,7 @@
 }
 
 .detalle-memoria p {
+  white-space: pre-line;
   font-size: 0.9rem;
   line-height: 1.8;
   color: #666;
