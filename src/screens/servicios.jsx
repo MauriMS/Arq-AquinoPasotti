@@ -30,6 +30,9 @@ function Servicios() {
         </div>
 
       </div>
+      <footer className="footer">
+        <span>©2026 aquino pasotti</span>
+      </footer>
     </div>
   );
 }
