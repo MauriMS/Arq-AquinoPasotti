@@ -15,17 +15,17 @@ function Novedades() {
 
         <div className="novedades-grid">
           {novedades.map((n) => (
-            <Link to={`/novedades/${n.id}`} className="novedad-card" key={n.id}>
+            <div  className="novedad-card" key={n.id}>
               <div className="novedad-texto">
                 <span className="novedad-fecha">{formatearFecha(n.fecha)}</span>
                 <h2 className="novedad-titulo">{n.titulo}</h2>
                 <p className="novedad-resumen">{n.resumen}</p>
-                <span className="novedad-leer-mas">leer más &rarr;</span>
+                
               </div>
               <div className="novedad-img-wrap">
                 <img src={n.imagen} alt={n.titulo} className="novedad-img" />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

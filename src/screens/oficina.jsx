@@ -61,7 +61,7 @@ function Off2() {
         <div className="off2-architects-grid">
           <div className="off2-architect-item">
             <div className="off2-architect-caption">
-              <span>Arq. Nombre Apellido</span>
+              <span>Arq. Aquino Pasotti</span>
             </div>
             <div className="off2-architect-arrow"></div>
             <div className="off2-architect-img-wrap">
@@ -70,7 +70,7 @@ function Off2() {
           </div>
           <div className="off2-architect-item">
             <div className="off2-architect-caption">
-              <span>Arq. Nombre Apellido</span>
+              <span>Arq. Daniel Aquino Pasotti</span>
             </div>
             <div className="off2-architect-arrow"></div>
             <div className="off2-architect-img-wrap">
@@ -79,7 +79,7 @@ function Off2() {
           </div>
           <div className="off2-architect-item">
             <div className="off2-architect-caption">
-              <span>Arq. Nombre Apellido</span>
+              <span>Ing. Aquino Pasotti</span>
             </div>
             <div className="off2-architect-arrow"></div>
             <div className="off2-architect-img-wrap">

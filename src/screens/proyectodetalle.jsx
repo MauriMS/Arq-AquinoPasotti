@@ -122,7 +122,7 @@ function ProyectoDetalle() {
         </p>
 
         <p className="detalle-field">
-          <strong>cliente:</strong> {proyecto.superficieConstruida}
+          <strong>cliente:</strong> {proyecto.cliente}
         </p>
 
         <h2 className="detalle-memoria-title">memoria</h2>

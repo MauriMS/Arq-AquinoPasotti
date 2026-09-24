@@ -1,4 +1,6 @@
 .contacto-page {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
@@ -10,7 +12,7 @@
 .contacto-hero {
   position: relative;
   width: 100%;
-  height: 65vh;
+  height: 50vh;
   min-height: 380px;
   overflow: hidden;
 }
@@ -42,19 +44,19 @@
 /* Mapa y datos */
 .contacto-lower {
   display: flex;
-  gap: 60px;
+  gap: 70px;
   align-items: flex-start;
   /* max-width: 1400px; */
   margin: 0;
-  padding: 60px 4rem 10px 4rem;
+  padding: 60px 5rem 10px 5rem;
   box-sizing: border-box;
   /* background-color: #111111; */
 }
 
 .contacto-map {
-  flex: 0 0 40%;
+  flex: 0 0 50%;
   min-width: 280px;
-  height: 420px;
+  height: calc(100vh - 60vh - 10px - 10px); /* Altura de la pantalla menos la altura del hero y el padding */
   border: 1px solid #ccc;
   overflow: hidden;
 }
@@ -69,18 +71,27 @@
 .contacto-info {
   flex: 1 1 55%;
   min-width: 280px;
+  
+  
 }
 
 .contacto-tagline {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Divide en 3 partes: los costados ocupan el mismo espacio, el centro es automático */
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 1rem;
-  gap: 16px;
+  gap: 20px;
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 24px;
+  padding: 0; 
+}
+
+.contacto-tagline span:first-child {
+  text-align: center; /* Empuja el texto de la izquierda hacia el centro */
+}
+
+.contacto-tagline span:last-child {
+  text-align: center; /* Empuja el texto de la derecha hacia el centro */
 }
 
 .contacto-tagline .separator {
@@ -102,7 +113,7 @@
 .contacto-footer-nav a {
   text-decoration: none;
   color: #555;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   transition: color 0.2s ease;
 }
 
@@ -118,26 +129,44 @@
 .contacto-fields {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 40px;
   padding: 0 1rem;
 }
 
 .contacto-field-row {
   display: flex;
-  gap: 40px;
+  gap: 60px;
+  
 }
 
 .contacto-field-label {
-  flex: 0 0 140px;
+  flex: 0 0 200px;
   color: #444;
   font-weight: 700;
 }
 
 .contacto-field-value p {
   margin: 0 0 6px;
-  font-size: 0.98rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #666;
+}
+.instagram-link {
+  margin-left: auto; 
+  color: #555;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.instagram-link:hover {
+  color: #111111;
+  transform: scale(1.05); /* Se agranda apenitas al pasar el mouse */
+}
+
+.instagram-icon {
+  width: 32px; /* Tamaño del logo */
+  height: 32px;
 }
 .contacto-footer{
   display: flex;
@@ -158,10 +187,25 @@
   color: inherit; 
   text-decoration: none; 
   transition: color 0.2s;
+  font-size: 1.2rem;
 }
 
 .contacto-mail-link:hover {
   color: #888; 
+}
+.contacto-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.8); 
+  letter-spacing: 0.5px;
+  pointer-events: none; 
+  padding-bottom: 10px; /* Un poquito más de respiro abajo */
+  
+  /* NUEVO: Empuja el footer hacia el final del espacio disponible */
+  margin-top: auto; 
 }
 
 @media (max-width: 900px) {

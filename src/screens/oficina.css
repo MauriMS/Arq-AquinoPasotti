@@ -110,8 +110,10 @@
 
 .off2-architect-caption {
   position: absolute;
-  left: 7px;
+  /* CENTRADO PERFECTO: Lo ubicamos al 50% y lo empujamos la mitad de su tamaño hacia atrás */
+  left: 50%;
   bottom: calc(100% + 11px); 
+  
   background-color: #ffffff;
   border: 2px solid #555;
   border-radius: 5px;
@@ -120,14 +122,17 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(4px);
+  
+  /* Aplicamos el -50% en X para centrar, y el 4px en Y para la animación */
+  transform: translate(-50%, 4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 5;
 }
 
 .off2-architect-item:hover .off2-architect-caption {
   opacity: 1;
-  transform: translateY(0);
+  /* Mantenemos el centrado en X (-50%) al subir la caja a 0 en Y */
+  transform: translate(-50%, 0);
 }
 
 .off2-architect-caption span {
