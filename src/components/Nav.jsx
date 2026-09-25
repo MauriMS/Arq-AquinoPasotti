@@ -20,7 +20,7 @@ const SUBNAV_MAP = {
     { label: 'servicios', to: '/servicios' },
   ],
   '/legales':[
-    { label: 'legales', to: '/terminos-legales.pdf', esPdf: true },
+    { label: 'legales', to: './terminos-legales.pdf', esPdf: true },
   ],
   '/proyectos': SUBNAV_PROYECTOS,
   '/proyectos/arquitectura': SUBNAV_PROYECTOS,

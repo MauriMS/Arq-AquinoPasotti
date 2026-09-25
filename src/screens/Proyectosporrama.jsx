@@ -1,10 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Proyectosporrama.css';
 import { proyectos } from '../Data/proyectos.js';
 
-// Config por rama: título de la página y categorías de filtro.
-// Para sumar/cambiar categorías, tocá solo esto.
 const RAMAS = {
   arquitectura: {
     titulo: 'proyectos de arquitectura :',
@@ -12,7 +10,6 @@ const RAMAS = {
   },
   ingenieria: {
     titulo: 'proyectos de ingeniería :',
-    // TODO: sumar más categorías si hace falta (ej: industrial, infraestructura)
     filtros: ['edificios', 'casas', 'viviendas'],
   },
 };
@@ -20,13 +17,28 @@ const RAMAS = {
 function ProyectosPorRama({ rama }) {
   const config = RAMAS[rama];
   const [filtro, setFiltro] = useState('todos');
+  const [ramaActual, setRamaActual] = useState(rama);
   const navigate = useNavigate();
+
+  
+  if (rama !== ramaActual) {
+    setRamaActual(rama);
+    setFiltro('todos');
+  }
+
+
+
+  const filtroActivo = rama !== ramaActual ? 'todos' : filtro;
 
   const proyectosFiltrados = proyectos.filter((p) => {
     if (p.rama !== rama) return false;
-    if (filtro === 'todos') return true;
-    return p.tipo === filtro;
+    if (filtroActivo === 'todos') return true;
+    return p.tipo === filtroActivo;
   });
+
+    useEffect(() => {
+    setFiltro('todos');
+  }, [rama]);
 
   return (
     <div className="rama-page">
@@ -40,7 +52,7 @@ function ProyectosPorRama({ rama }) {
 
           <div className="rama-filtros">
             <button
-              className={filtro === 'todos' ? 'active' : ''}
+              className={filtroActivo === 'todos' ? 'active' : ''}
               onClick={() => setFiltro('todos')}
             >
               todos
@@ -48,7 +60,7 @@ function ProyectosPorRama({ rama }) {
             {config.filtros.map((f) => (
               <button
                 key={f}
-                className={filtro === f ? 'active' : ''}
+                className={filtroActivo === f ? 'active' : ''}
                 onClick={() => setFiltro(f)}
               >
                 {f}
