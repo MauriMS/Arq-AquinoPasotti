@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import logo from "../assets/logo3.jpg"; 
 import './Nav.css';
 
-// Sub-menú que aparece debajo del nav principal en ciertas secciones.
-// Para agregar otra sección con su propio submenú, sumá una entrada acá:
+
 
 const SUBNAV_PROYECTOS = [
   { label: 'arquitectura', to: '/proyectos/arquitectura' },
@@ -21,7 +20,7 @@ const SUBNAV_MAP = {
     { label: 'servicios', to: '/servicios' },
   ],
   '/legales':[
-    { label: 'legales', to: './términos y condiciones legales.pdf', esPdf: true },
+    { label: 'legales', to: '/terminos-legales.pdf', esPdf: true },
   ],
   '/proyectos': SUBNAV_PROYECTOS,
   '/proyectos/arquitectura': SUBNAV_PROYECTOS,
@@ -34,8 +33,8 @@ function Nav() {
   const isContacto = location.pathname === '/contacto';
   const subNavItems = SUBNAV_MAP[location.pathname];
 
-  // Guardamos el último submenú con contenido para que, al salir de la página,
-  // la animación de cierre no se quede sin links mientras colapsa.
+  
+  
   const [displayedSubNav, setDisplayedSubNav] = useState(subNavItems || []);
   const subnavOpen = Boolean(subNavItems);
 
@@ -43,7 +42,7 @@ function Nav() {
     if (subNavItems) {
       setDisplayedSubNav(subNavItems);
     }
-  }, [location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [location.pathname]); 
 
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

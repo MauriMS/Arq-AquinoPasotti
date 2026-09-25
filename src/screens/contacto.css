@@ -157,15 +157,17 @@
   display: flex;
   align-items: center;
   transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: -10px;
+  
 }
 
 .instagram-link:hover {
   color: #111111;
-  transform: scale(1.05); /* Se agranda apenitas al pasar el mouse */
+  transform: scale(1.05); 
 }
 
 .instagram-icon {
-  width: 32px; /* Tamaño del logo */
+  width: 32px; 
   height: 32px;
 }
 .contacto-footer{
@@ -202,9 +204,9 @@
   color: rgba(0, 0, 0, 0.8); 
   letter-spacing: 0.5px;
   pointer-events: none; 
-  padding-bottom: 10px; /* Un poquito más de respiro abajo */
+  padding-bottom: 10px;
   
-  /* NUEVO: Empuja el footer hacia el final del espacio disponible */
+  
   margin-top: auto; 
 }
 
