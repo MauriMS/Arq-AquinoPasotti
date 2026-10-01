@@ -11,17 +11,19 @@ import Contacto from "./screens/contacto.jsx";
 import Legales from "./screens/legales.jsx";
 import Nav from "./components/Nav.jsx";
 import ProyectosPorRama from "./screens/Proyectosporrama.jsx";
+import { LanguageProvider } from "./Traduccion/languagecontext.jsx";
 
 
 import "./App.css";
 
 function App() {
   return (
-    <HashRouter>
-      <Nav></Nav>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/proyectos" element={<Proyectos></Proyectos>}></Route>
+    <LanguageProvider>
+      <HashRouter>
+        <Nav></Nav>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/proyectos" element={<Proyectos></Proyectos>}></Route>
         <Route path="/proyectos/:id" element={<ProyectoDetalle />}></Route>
         <Route path="/proyectos/arquitectura" element={<ProyectosPorRama rama="arquitectura" />}></Route>
         <Route path="/proyectos/ingenieria" element={<ProyectosPorRama rama="ingenieria" />}></Route>
@@ -32,6 +34,7 @@ function App() {
         <Route path="/legales" element={<Legales />}></Route>
       </Routes>
     </HashRouter>
+    </LanguageProvider>
   );
 }
 
