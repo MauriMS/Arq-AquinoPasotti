@@ -2,10 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './proyectodetalle.css';
 import { proyectos } from '../Data/proyectos';
+import { useLanguage } from '../Traduccion/languagecontext.jsx';
 
 function ProyectoDetalle() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t, field } = useLanguage();
   const proyecto = proyectos.find((p) => p.id === id);
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -49,9 +51,9 @@ function ProyectoDetalle() {
       <div className="detalle-page">
         <div className="detalle-info">
           <button className="detalle-back" onClick={() => navigate('/proyectos')}>
-            &larr; volver
+            &larr; {t('detalle.volver')}
           </button>
-          <p>No se encontró el proyecto.</p>
+          <p>{t('detalle.noEncontrado')}</p>
         </div>
       </div>
     );
@@ -66,7 +68,7 @@ function ProyectoDetalle() {
       <div className="detalle-carousel">
         <img
           src={proyecto.imagenes[index]}
-          alt={`${proyecto.nombre} ${index + 1}`}
+          alt={`${field(proyecto, 'nombre')} ${index + 1}`}
           className="detalle-carousel-img detalle-carousel-img-clickable"
           onClick={() => setLightboxOpen(true)}
         />
@@ -102,32 +104,32 @@ function ProyectoDetalle() {
 
       <div className="detalle-info">
         <button className="detalle-back" onClick={() => navigate('/proyectos')}>
-          &larr; volver
+          &larr; {t('detalle.volver')}
         </button>
 
-        <h1 className="detalle-titulo">{proyecto.nombre}</h1>
+        <h1 className="detalle-titulo">{field(proyecto, 'nombre')}</h1>
 
         <p className="detalle-field">
-          <strong>ubicación:</strong> {proyecto.ubicacion}
+          <strong>{t('detalle.ubicacion')}</strong> {field(proyecto, 'ubicacion')}
         </p>
         <p className="detalle-field">
-          <strong>superficie lote:</strong> {proyecto.superficieTerreno}
+          <strong>{t('detalle.superficieLote')}</strong> {proyecto.superficieTerreno}
         </p>
         <p className="detalle-field">
-          <strong>superficie:</strong> {proyecto.superficieConstruida}
-        </p>
-        
-        <p className="detalle-field">
-          <strong>año:</strong> {proyecto.anio}
+          <strong>{t('detalle.superficie')}</strong> {proyecto.superficieConstruida}
         </p>
 
         <p className="detalle-field">
-          <strong>cliente:</strong> {proyecto.cliente}
+          <strong>{t('detalle.anio')}</strong> {proyecto.anio}
         </p>
 
-        <h2 className="detalle-memoria-title">memoria</h2>
+        <p className="detalle-field">
+          <strong>{t('detalle.cliente')}</strong> {field(proyecto, 'cliente')}
+        </p>
+
+        <h2 className="detalle-memoria-title">{t('detalle.memoria')}</h2>
         <div className="detalle-memoria">
-          <p>{proyecto.memoria}</p>
+          <p>{field(proyecto, 'memoria')}</p>
         </div>
       </div>
 
@@ -147,7 +149,7 @@ function ProyectoDetalle() {
 
           <img
             src={proyecto.imagenes[index]}
-            alt={`${proyecto.nombre} ${index + 1}`}
+            alt={`${field(proyecto, 'nombre')} ${index + 1}`}
             className="lightbox-img"
             onClick={(e) => e.stopPropagation()}
           />

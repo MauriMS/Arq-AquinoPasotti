@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './contacto.css';
+import { useLanguage } from '../Traduccion/languagecontext.jsx';
 
 
 const fotoFondo = 'https://picsum.photos/id/1076/1600/900';
 
+// Mismas claves que usa el Nav, para no duplicar traducciones
 const linksInferiores = [
-  { label: 'proyectos', to: '/proyectos' },
-  { label: 'oficina', to: '/oficina' },
-  { label: 'novedades', to: '/novedades' },
-  { label: 'contacto', to: '/contacto' },
-  { label: 'legales', to: '/legales' },
+  { labelKey: 'nav.proyectos', to: '/proyectos' },
+  { labelKey: 'nav.oficina', to: '/oficina' },
+  { labelKey: 'nav.novedades', to: '/novedades' },
+  { labelKey: 'nav.contacto', to: '/contacto' },
+  { labelKey: 'subnav.legales', to: '/legales' },
 ];
 
 function Contacto() {
   const location = useLocation();
+  const { t } = useLanguage();
 
   return (
     <div className="contacto-page">
@@ -23,7 +26,7 @@ function Contacto() {
       <div className="contacto-hero">
         <img src={fotoFondo} alt="" className="contacto-hero-img" />
         <div className="contacto-hero-overlay" />
-        <h1 className="contacto-hero-title">contacto</h1>
+        <h1 className="contacto-hero-title">{t('contacto.heroTitle')}</h1>
       </div>
 
       
@@ -43,9 +46,8 @@ function Contacto() {
 
           <div className="contacto-tagline">
             <span>aquino pasotti  consultora</span>
-            {/* <span>consultora</span> */}
             <span className="separator">|</span>
-            <span>arquitectura + ingenieria</span>
+            <span>{t('contacto.taglineMid')}</span>
           </div>
 
           <nav className="contacto-footer-nav">
@@ -55,14 +57,14 @@ function Contacto() {
                 to={item.to}
                 className={location.pathname === item.to ? 'active' : ''}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
           </nav>
 
           <div className="contacto-fields">
             <div className="contacto-field-row">
-              <span className="contacto-field-label">ubicación:</span>
+              <span className="contacto-field-label">{t('contacto.ubicacion')}</span>
               <div className="contacto-field-value">
                 
                 <p>san lorenzo 386</p>
@@ -71,7 +73,7 @@ function Contacto() {
             </div>
 
             <div className="contacto-field-row">
-              <span className="contacto-field-label">telefonos:</span>
+              <span className="contacto-field-label">{t('contacto.telefonos')}</span>
               <div className="contacto-field-value">
                 
                 <p>+54 9 362 4629733  (es).</p>
@@ -80,7 +82,7 @@ function Contacto() {
             </div>
             
             <div className="contacto-field-row">
-              <span className="contacto-field-label">mail:</span>
+              <span className="contacto-field-label">{t('contacto.mail')}</span>
               <div className="contacto-field-value">
                 <a 
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=info@aquinopasotti.com" 
@@ -120,7 +122,7 @@ function Contacto() {
         
       </div>
       <footer className="contacto-footer">
-        <span>©2026 aquino pasotti</span>
+        <span>{t('footer')}</span>
       </footer>
     </div>
   );

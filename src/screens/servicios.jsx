@@ -1,21 +1,24 @@
 import React from 'react';
 import './servicios.css';
+import { useLanguage } from '../Traduccion/languagecontext.jsx';
 
 import foto1 from '../assets/logo2.jpg';
 import foto2 from '../assets/logo2.jpg';
 
 function Servicios() {
+  const { t } = useLanguage();
+
   return (
     <div className="servicios-page">
       <div className="servicios-container">
 
         <div className="servicios-texto">
-          <h1 className="servicios-titulo">oficina + servicios</h1>
+          <h1 className="servicios-titulo">{t('servicios.titulo')}</h1>
           <div className="servicios-content">
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit assumenda quis animi porro, odio hic dolor quas obcaecati. Magni commodi ratione ad. Eius, quaerat excepturi ea sit quas omnis quos.
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat doloribus voluptatum eius numquam hic neque inventore quaerat totam dolorem harum, quisquam consequuntur animi nihil laboriosam, sapiente alias reprehenderit nisi similique!
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum architecto minus asperiores aut, quam maiores delectus aspernatur tempore facere pariatur, perferendis, explicabo iste labore aperiam? Deleniti quod itaque tempore incidunt!
+              {t('servicios.p1')}
+              {t('servicios.p2')}
+              {t('servicios.p3')}
             </p>
           </div>
         </div>
@@ -31,7 +34,7 @@ function Servicios() {
 
       </div>
       <footer className="footer">
-        <span>©2026 aquino pasotti</span>
+        <span>{t('footer')}</span>
       </footer>
     </div>
   );

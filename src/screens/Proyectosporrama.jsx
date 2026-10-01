@@ -1,34 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Proyectosporrama.css';
 import { proyectos } from '../Data/proyectos.js';
-
-const RAMAS = {
-  arquitectura: {
-    titulo: 'proyectos de arquitectura :',
-    filtros: ['viviendas', 'comercial', 'urbanismo', 'concursos'],
-  },
-  ingenieria: {
-    titulo: 'proyectos de ingeniería :',
-    filtros: ['edificios', 'casas', 'viviendas'],
-  },
-};
+import { useLanguage } from '../Traduccion/languagecontext.jsx';
 
 function ProyectosPorRama({ rama }) {
-  const config = RAMAS[rama];
+  const { t, field } = useLanguage();
   const [filtro, setFiltro] = useState('todos');
   const [ramaActual, setRamaActual] = useState(rama);
   const navigate = useNavigate();
 
-  
   if (rama !== ramaActual) {
     setRamaActual(rama);
     setFiltro('todos');
   }
 
-
-
   const filtroActivo = rama !== ramaActual ? 'todos' : filtro;
+
+  // "value" queda fijo en español (coincide con el campo "tipo" de
+  // Data/proyectos.js); "label" sí cambia según el idioma.
+  const filtros = t(`proyectosPorRama.filtros.${rama}`);
+  const titulo = t(
+    rama === 'arquitectura'
+      ? 'proyectosPorRama.tituloArquitectura'
+      : 'proyectosPorRama.tituloIngenieria'
+  );
 
   const proyectosFiltrados = proyectos.filter((p) => {
     if (p.rama !== rama) return false;
@@ -36,34 +32,30 @@ function ProyectosPorRama({ rama }) {
     return p.tipo === filtroActivo;
   });
 
-    useEffect(() => {
-    setFiltro('todos');
-  }, [rama]);
-
   return (
     <div className="rama-page">
       <div className="rama-container">
         <button className="rama-back" onClick={() => navigate('/proyectos')}>
-          &larr; volver
+          &larr; {t('proyectosPorRama.volver')}
         </button>
 
         <div className="rama-header">
-          <h1 className="rama-title">{config.titulo}</h1>
+          <h1 className="rama-title">{titulo}</h1>
 
           <div className="rama-filtros">
             <button
               className={filtroActivo === 'todos' ? 'active' : ''}
               onClick={() => setFiltro('todos')}
             >
-              todos
+              {t('proyectosPorRama.todos')}
             </button>
-            {config.filtros.map((f) => (
+            {filtros.map((f) => (
               <button
-                key={f}
-                className={filtroActivo === f ? 'active' : ''}
-                onClick={() => setFiltro(f)}
+                key={f.value}
+                className={filtroActivo === f.value ? 'active' : ''}
+                onClick={() => setFiltro(f.value)}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
@@ -71,19 +63,22 @@ function ProyectosPorRama({ rama }) {
 
         {proyectosFiltrados.length > 0 ? (
           <div className="rama-grid">
-            {proyectosFiltrados.map((p) => (
-              <Link to={`/proyectos/${p.id}`} className="rama-card" key={p.id}>
-                <img src={p.cover} alt={p.nombre} className="rama-cover" />
+            {proyectosFiltrados.map((p, i) => (
+              <Link
+                to={`/proyectos/${p.id}`}
+                className="rama-card"
+                key={`${filtroActivo}-${p.id}`}
+                style={{ animationDelay: `${i * 0.06}s` }}
+              >
+                <img src={p.cover} alt={field(p, 'nombre')} className="rama-cover" />
                 <div className="rama-overlay">
-                  <span>{p.nombre}</span>
+                  <span>{field(p, 'nombre')}</span>
                 </div>
               </Link>
             ))}
           </div>
         ) : (
-          <p className="rama-vacio">
-            Todavía no hay proyectos cargados en esta categoría.
-          </p>
+          <p className="rama-vacio">{t('proyectosPorRama.vacio')}</p>
         )}
       </div>
     </div>
