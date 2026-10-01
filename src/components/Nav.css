@@ -211,6 +211,14 @@
 .nav-links a:hover {
   color: #ffffff;
 }
+.nav-links a.active {
+  color: #ffffff;
+}
+
+/* Fija la línea de subrayado al 100% cuando está activo */
+.nav-links a.active::after {
+  width: 100%;
+}
 
 /* btn de idiomas */
 .lang-switcher {
@@ -229,15 +237,40 @@
   font-weight: 700;
   font-family: 'Arial', sans-serif;
   padding: 0;
+  padding-bottom: 2px; /* Espacio para que la línea no toque las letras */
+  position: relative; /* Ancla para la línea */
   transition: color 0.2s;
 }
 
-.lang-btn:hover {
-  color: #111111;
+/* La línea blanca colapsada por defecto */
+.lang-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
 }
 
+/* Color de texto al pasar el mouse */
+.lang-btn:hover {
+  color: #ffffff; 
+}
+
+/* Expande la línea al pasar el mouse */
+.lang-btn:hover::after {
+  width: 100%;
+}
+
+/* Mantiene texto blanco y línea expandida cuando está activo */
 .lang-btn.active {
   color: #ffffff; 
+}
+
+.lang-btn.active::after {
+  width: 100%;
 }
 
 .lang-separator {
