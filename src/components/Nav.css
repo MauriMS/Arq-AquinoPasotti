@@ -47,12 +47,12 @@
 }
 
 
-/* Wrapper animado: colapsa/expande el alto del submenú con la técnica grid-rows 0fr -> 1fr */
+
 .navbar-subrow-wrap {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.35s ease;
-  margin-top: 0px; /* NUEVO: Pasamos el margen negativo acá para achicar el nav globalmente */
+  margin-top: 0px; 
 }
 
 .navbar-subrow-wrap.open {
@@ -68,13 +68,13 @@
   justify-content: flex-end;
   padding: 0 0px 10px 0px;
   opacity: 0;
-  transform: translateY(-8px); /* Arranca ligeramente desplazado hacia arriba */
+  transform: translateY(-8px); 
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .navbar-subrow-wrap.open .navbar-subrow {
   opacity: 1;
-  transform: translateY(0); /* Baja a su posición natural suavemente */
+  transform: translateY(0); 
   transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
 }
 
@@ -95,8 +95,8 @@
   font-weight: 500;
   letter-spacing: 0.3px;
   line-height: 1;
-  position: relative; /* Clave para anclar la línea por debajo */
-  padding-bottom: 3px; /* Separa un poquito el texto de la línea */
+  position: relative; 
+  padding-bottom: 3px;
   transition: color 0.2s;
 }
 
@@ -215,12 +215,12 @@
   color: #ffffff;
 }
 
-/* Fija la línea de subrayado al 100% cuando está activo */
+
 .nav-links a.active::after {
   width: 100%;
 }
 
-/* btn de idiomas */
+
 .lang-switcher {
   display: flex;
   align-items: center;
@@ -237,12 +237,12 @@
   font-weight: 700;
   font-family: 'Arial', sans-serif;
   padding: 0;
-  padding-bottom: 2px; /* Espacio para que la línea no toque las letras */
-  position: relative; /* Ancla para la línea */
+  padding-bottom: 2px; 
+  position: relative; 
   transition: color 0.2s;
 }
 
-/* La línea blanca colapsada por defecto */
+
 .lang-btn::after {
   content: '';
   position: absolute;
@@ -254,17 +254,17 @@
   transition: width 0.3s ease-in-out;
 }
 
-/* Color de texto al pasar el mouse */
+
 .lang-btn:hover {
   color: #ffffff; 
 }
 
-/* Expande la línea al pasar el mouse */
+
 .lang-btn:hover::after {
   width: 100%;
 }
 
-/* Mantiene texto blanco y línea expandida cuando está activo */
+
 .lang-btn.active {
   color: #ffffff; 
 }
@@ -289,13 +289,13 @@
   }
 }
 
-/* Aplicamos la animación a cada elemento (li) del submenú */
+
 .subnav-links li {
-  opacity: 0; /* Arrancan invisibles */
-  animation: fadeInUpSubnav 0.4s ease forwards; /* forwards hace que se queden visibles al terminar */
+  opacity: 0; 
+  animation: fadeInUpSubnav 0.4s ease forwards; 
 }
 
-/* Efecto escalera: el segundo botón tarda un poquito más en bajar que el primero */
+
 .subnav-links li:nth-child(1) {
   animation-delay: 0.1s;
 }
