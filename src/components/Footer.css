@@ -1,0 +1,21 @@
+/* La página reserva espacio abajo y el footer queda pegado al borde inferior:
+   - si el contenido es corto, queda al fondo de la pantalla
+   - si es largo, queda al final del contenido */
+.page-con-footer {
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+
+.site-footer {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
