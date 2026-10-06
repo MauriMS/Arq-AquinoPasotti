@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import './novedades.css';
 import { novedades } from '../Data/novedades';
 import { useLanguage } from '../Traduccion/languagecontext.jsx';
+import Footer from '../components/Footer.jsx';
+import TituloPagina from '../components/TituloPagina.jsx';
 
 function Novedades() {
   const { t, field, lang } = useLanguage();
@@ -16,9 +18,9 @@ function Novedades() {
   };
 
   return (
-    <div className="novedades-page">
+    <div className="novedades-page page-con-footer">
+      <TituloPagina>{t('novedades.title')}</TituloPagina>
       <div className="novedades-container">
-        <h1 className="novedades-title">{t('novedades.title')}</h1>
 
         <div className="novedades-grid">
           {novedades.map((n) => (
@@ -35,9 +37,7 @@ function Novedades() {
           ))}
         </div>
       </div>
-      <footer className="footer">
-        <span>{t('footer')}</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
