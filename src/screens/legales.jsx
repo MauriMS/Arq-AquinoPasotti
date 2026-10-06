@@ -1,18 +1,27 @@
 import React from 'react';
 import './legales.css';
 import { useLanguage } from '../Traduccion/languagecontext.jsx';
+import Footer from '../components/Footer.jsx';
+import TituloPagina from '../components/TituloPagina.jsx';
+import SubNav from '../components/SubNav.jsx';
+
+import logo from '../assets/logo3.jpg';
+
+// Mismo PDF que usa el SubNav (en la carpeta /public)
+const PDF_LEGALES = './terminos-legales.pdf';
 
 function Legales() {
   const { t } = useLanguage();
   const l = (key) => t(`legales.${key}`);
 
   return (
-    <div className="legales-page">
+    <div className="legales-page page-con-footer">
+      <SubNav grupo="legales" />
+      <TituloPagina>{l('title')}</TituloPagina>
       <div className="legales-container">
 
         <div className="legales-content">
 
-          <h1 className="legales-title">{l('title')}</h1>
 
           <p className="legales-intro">{l('intro')}</p>
 
@@ -34,11 +43,19 @@ function Legales() {
           <footer className="legales-footer">
             <p>{l('footer')}</p>
           </footer>
+
+          <a
+            href={PDF_LEGALES}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="legales-logo-link"
+            aria-label="Aquino Pasotti - PDF"
+          >
+            <img src={logo} alt="Aquino Pasotti" className="legales-logo" />
+          </a>
         </div>
       </div>
-      <footer className="footer">
-        <span>{t('footer')}</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
