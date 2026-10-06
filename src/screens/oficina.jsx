@@ -1,20 +1,24 @@
 import React from 'react';
-import './oficina.css';
+import './oficina.css'; // o './off2.css' dependiendo del nombre real de tu archivo CSS
 import { useLanguage } from '../Traduccion/languagecontext.jsx';
+import Footer from '../components/Footer.jsx';
+import TituloPagina from '../components/TituloPagina.jsx';
+import SubNav from '../components/SubNav.jsx';
 
 import arq1 from '../assets/logo2.jpg';
 import arq2 from '../assets/logo2.jpg';
 import arq3 from '../assets/logo2.jpg';
 
-function Off2() {
+function Oficina() {
   const { t } = useLanguage();
   const o = (key) => t(`oficina.${key}`);
 
   return (
-    <div className="off2-page">
-      <div className="off2-container">
-
-        <h1 className="off2-title">{o('title')}</h1>
+    <div className="oficina-page page-con-footer">
+      <SubNav grupo="oficina" />
+      <TituloPagina>{o('title')}</TituloPagina>
+      <div className="oficina-container">
+        
 
         <div className="oficina-content">
           <p>{o('p1')}</p>
@@ -39,8 +43,7 @@ function Off2() {
           <ul className="oficina-list">
             {o('pilares').map((item, i) => (
               <li key={i}>
-                <strong>{item.fuerte}</strong>
-                {item.texto}
+                <strong>{item.fuerte}</strong> {item.texto}
               </li>
             ))}
           </ul>
@@ -49,47 +52,35 @@ function Off2() {
           <p className="oficina-quote">{o('filosofiaQuote')}</p>
         </div>
 
+        <hr className="divider-line" />
         
-        <hr className="off2-divider-line" />
-        
-        <div className="off2-architects-grid">
-          <div className="off2-architect-item">
-            <div className="off2-architect-caption">
+        <div className="architects-grid">
+          <div className="architect-item">
+            <img src={arq1} alt="Arquitecto 1" className="architect-img" />
+            <div className="architect-caption">
               <span>Arq. Aquino Pasotti</span>
             </div>
-            <div className="off2-architect-arrow"></div>
-            <div className="off2-architect-img-wrap">
-              <img src={arq1} alt="Arquitecto 1" className="off2-architect-img" />
-            </div>
           </div>
-          <div className="off2-architect-item">
-            <div className="off2-architect-caption">
+          <div className="architect-item">
+            <img src={arq2} alt="Arquitecto 2" className="architect-img" />
+            <div className="architect-caption">
               <span>Arq. Daniel Aquino Pasotti</span>
             </div>
-            <div className="off2-architect-arrow"></div>
-            <div className="off2-architect-img-wrap">
-              <img src={arq2} alt="Arquitecto 2" className="off2-architect-img" />
-            </div>
           </div>
-          <div className="off2-architect-item">
-            <div className="off2-architect-caption">
+          <div className="architect-item">
+            <img src={arq3} alt="Arquitecto 3" className="architect-img" />
+            <div className="architect-caption">
               <span>Ing. Aquino Pasotti</span>
-            </div>
-            <div className="off2-architect-arrow"></div>
-            <div className="off2-architect-img-wrap">
-              <img src={arq3} alt="Arquitecto 3" className="off2-architect-img" />
             </div>
           </div>
         </div>
 
-        <hr className="off2-divider-line" />
+        <hr className="divider-line" />
 
       </div>
-      <footer className="off2_footer">
-        <span className="off2-footer-span">{t('footer')}</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
 
-export default Off2;
+export default Oficina;
