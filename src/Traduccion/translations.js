@@ -27,8 +27,8 @@ export const translations = {
     },
 
     proyectosPorRama: {
-      tituloArquitectura: 'proyectos de arquitectura :',
-      tituloIngenieria: 'proyectos de ingeniería :',
+      tituloArquitectura: 'proyectos arquitectura ',
+      tituloIngenieria: 'proyectos ingeniería ',
       volver: 'volver',
       todos: 'todos',
       vacio: 'Todavía no hay proyectos cargados en esta categoría.',
@@ -151,8 +151,8 @@ export const translations = {
     },
 
     proyectosPorRama: {
-      tituloArquitectura: 'architecture projects :',
-      tituloIngenieria: 'engineering projects :',
+      tituloArquitectura: 'architecture projects ',
+      tituloIngenieria: 'engineering projects ',
       volver: 'back',
       todos: 'all',
       vacio: 'No projects have been added to this category yet.',
