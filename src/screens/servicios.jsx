@@ -1,6 +1,9 @@
 import React from 'react';
 import './servicios.css';
 import { useLanguage } from '../Traduccion/languagecontext.jsx';
+import Footer from '../components/Footer.jsx';
+import TituloPagina from '../components/TituloPagina.jsx';
+import SubNav from '../components/SubNav.jsx';
 
 import foto1 from '../assets/logo2.jpg';
 import foto2 from '../assets/logo2.jpg';
@@ -9,11 +12,12 @@ function Servicios() {
   const { t } = useLanguage();
 
   return (
-    <div className="servicios-page">
+    <div className="servicios-page page-con-footer">
+      <SubNav grupo="oficina" />
+      <TituloPagina>{t('servicios.titulo')}</TituloPagina>
       <div className="servicios-container">
 
         <div className="servicios-texto">
-          <h1 className="servicios-titulo">{t('servicios.titulo')}</h1>
           <div className="servicios-content">
             <p>
               {t('servicios.p1')}
@@ -33,9 +37,7 @@ function Servicios() {
         </div>
 
       </div>
-      <footer className="footer">
-        <span>{t('footer')}</span>
-      </footer>
+      <Footer />
     </div>
   );
 }
