@@ -11,17 +11,10 @@
 }
 
 .proyectos-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 20px 60px;
+  margin: 0;
+  padding: 0 4rem 60px; /* mismo margen lateral que el nav y el título */
 }
 
-.proyectos-title {
-  font-size: 3.5rem;
-  font-weight: 500;
-  color: #555;
-  margin-bottom: 40px;
-}
 
 .proyectos-grid {
   display: grid;
@@ -89,29 +82,12 @@
   text-align: center;
   padding: 0 14px;
 }
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.8); 
-  letter-spacing: 0.5px;
-  pointer-events: none; 
-  padding-bottom: 10px; /* Un poquito más de respiro abajo */
-  
-  /* NUEVO: Empuja el footer hacia el final del espacio disponible */
-  margin-top: auto; 
-}
 
 @media (max-width: 900px) {
   .proyectos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .proyectos-title {
-    font-size: 2.4rem;
-  }
 }
 
 @media (max-width: 560px) {
@@ -120,6 +96,12 @@
   }
 
   .proyectos-page {
-    padding-top: 100px;
+    padding-top: 130px;
+  }
+}
+
+@media (max-width: 700px) {
+  .proyectos-container {
+    padding: 0 1.5rem 40px;
   }
 }
