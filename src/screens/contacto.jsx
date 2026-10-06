@@ -2,9 +2,11 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './contacto.css';
 import { useLanguage } from '../Traduccion/languagecontext.jsx';
+import Footer from '../components/Footer.jsx';
+import TituloPagina from '../components/TituloPagina.jsx';
+import fotoFondo from '../assets/1-vista-3d.jpeg';
 
 
-const fotoFondo = 'https://picsum.photos/id/1076/1600/900';
 
 // Mismas claves que usa el Nav, para no duplicar traducciones
 const linksInferiores = [
@@ -20,13 +22,13 @@ function Contacto() {
   const { t } = useLanguage();
 
   return (
-    <div className="contacto-page">
+    <div className="contacto-page page-con-footer">
 
       
       <div className="contacto-hero">
         <img src={fotoFondo} alt="" className="contacto-hero-img" />
         <div className="contacto-hero-overlay" />
-        <h1 className="contacto-hero-title">{t('contacto.heroTitle')}</h1>
+        <TituloPagina className="contacto-hero-title">{t('contacto.heroTitle')}</TituloPagina>
       </div>
 
       
@@ -67,8 +69,7 @@ function Contacto() {
               <span className="contacto-field-label">{t('contacto.ubicacion')}</span>
               <div className="contacto-field-value">
                 
-                <p>san lorenzo 386</p>
-                <p>cp h3500  - resistenncia - chaco - argentina</p>
+                <p>resistencia - chaco - argentina</p>
               </div>
             </div>
 
@@ -121,9 +122,7 @@ function Contacto() {
         </div>
         
       </div>
-      <footer className="contacto-footer">
-        <span>{t('footer')}</span>
-      </footer>
+      <Footer />
     </div>
   );
 }

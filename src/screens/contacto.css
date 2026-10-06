@@ -1,19 +1,28 @@
 .contacto-page {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;      /* sin scroll en escritorio */
+  overflow: hidden;
   font-family: 'Arial', sans-serif;
   color: #666;
   background-color: #ffffff;
 }
 
- /* Titulo y fondo */
+/* Footer.css le suma 40px de padding abajo a .page-con-footer (franja blanca);
+   en esta vista se anula para que el gris llegue hasta el borde */
+.contacto-page.page-con-footer {
+  padding-bottom: 0;
+}
+
+/* Titulo y fondo: la foto se agranda con lo que sobra de pantalla */
 .contacto-hero {
   position: relative;
+  flex: 1 1 0;         /* ocupa todo el alto que sobra */
+  min-height: 210px;   /* el título está a 130px del borde */
   width: 100%;
-  height: 50vh;
-  min-height: 380px;
   overflow: hidden;
 }
 
@@ -22,46 +31,57 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(1.2) contrast(1.05);
 }
 
+/* El título comparte tamaño/estilo con .titulo-pagina; acá solo se posiciona
+   en el mismo lugar que en las demás vistas (a 4rem del borde, 130px de alto) */
+.contacto-hero .contacto-hero-title {
+  position: absolute;
+  left: 4rem;
+  top: 130px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* Velo suave: solo oscurece arriba (nav y título) y deja los colores abajo */
 .contacto-hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-.contacto-hero-title {
-  position: absolute;
-  left: 4rem;
-  bottom: 60px;
-  color: #ffffff;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-/* Mapa y datos */
+/* Mapa y datos: el mapa se estira para tener la misma altura que el texto */
 .contacto-lower {
+  flex: 0 0 auto;
   display: flex;
   gap: 70px;
-  align-items: flex-start;
-  /* max-width: 1400px; */
+  align-items: stretch;
+  background-color: #373737fc;
   margin: 0;
-  padding: 60px 5rem 10px 5rem;
+  padding: clamp(20px, 4vh, 50px) 5rem 56px 5rem; /* abajo queda lugar para el footer */
   box-sizing: border-box;
-  /* background-color: #111111; */
 }
 
 .contacto-map {
-  flex: 0 0 50%;
+  position: relative;
+  flex: 0 0 46%;
   min-width: 280px;
-  height: calc(100vh - 60vh - 10px - 10px); /* Altura de la pantalla menos la altura del hero y el padding */
-  border: 1px solid #ccc;
+  min-height: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
 
 .contacto-map iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
@@ -69,33 +89,28 @@
 }
 
 .contacto-info {
-  flex: 1 1 55%;
+  flex: 1 1 0;
   min-width: 280px;
-  
-  
+  display: flex;
+  flex-direction: column;
 }
 
+/* Misma separación lateral (1rem) que .contacto-footer-nav para que
+   el comienzo y el final de los dos renglones coincidan */
 .contacto-tagline {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Divide en 3 partes: los costados ocupan el mismo espacio, el centro es automático */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 24px;
-  padding: 0; 
-}
-
-.contacto-tagline span:first-child {
-  text-align: center; /* Empuja el texto de la izquierda hacia el centro */
-}
-
-.contacto-tagline span:last-child {
-  text-align: center; /* Empuja el texto de la derecha hacia el centro */
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: clamp(16px, 3vh, 28px);
 }
 
 .contacto-tagline .separator {
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
 }
 
@@ -103,138 +118,210 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 34px;
-  padding: 0 1rem;
-  padding-bottom: 14px;
-  margin-bottom: 40px;
-  border-bottom: 2px solid #444;
+  gap: 12px 34px;
+  padding: 0 1rem 14px;
+  margin-bottom: clamp(20px, 4vh, 36px);
+  border-bottom: 2px solid #ffffff;
 }
 
 .contacto-footer-nav a {
+  position: relative;
+  padding-bottom: 2px;
   text-decoration: none;
-  color: #555;
-  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.25rem;
   transition: color 0.2s ease;
 }
 
+/* Subrayado igual al del nav: aparece al pasar el mouse y queda fijo en
+   el link de la página actual (contacto) */
+.contacto-footer-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #ffffff;
+  transition: width 0.3s ease-in-out;
+}
+
 .contacto-footer-nav a:hover {
-  color: #111111;
+  color: #ffffff;
+}
+
+.contacto-footer-nav a:hover::after,
+.contacto-footer-nav a.active::after {
+  width: 100%;
 }
 
 .contacto-footer-nav a.active {
-  color: #111111;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .contacto-fields {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(16px, 3vh, 28px);
   padding: 0 1rem;
 }
 
 .contacto-field-row {
   display: flex;
   gap: 60px;
-  
 }
 
 .contacto-field-label {
   flex: 0 0 200px;
-  color: #444;
+  color: #ffffff;
   font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.contacto-field-value {
+  color: #ffffff;
 }
 
 .contacto-field-value p {
-  margin: 0 0 6px;
-  font-size: 1.2rem;
+  margin: 0 0 4px;
+  font-size: 1.35rem;
   line-height: 1.6;
-  color: #666;
-}
-.instagram-link {
-  margin-left: auto; 
-  color: #555;
-  display: flex;
-  align-items: center;
-  transition: color 0.2s ease, transform 0.2s ease;
-  margin-top: -10px;
-  
-}
-
-.instagram-link:hover {
-  color: #111111;
-  transform: scale(1.05); 
-}
-
-.instagram-icon {
-  width: 32px; 
-  height: 32px;
-}
-.contacto-footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    font-family: 'Arial', sans-serif;
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.8); 
-  letter-spacing: 0.5px;
-  pointer-events: none; 
-  padding-bottom: 10px;
+  color: #ffffff;
 }
 
 .contacto-field-value p:last-child {
   margin-bottom: 0;
 }
+
+.instagram-link {
+  margin-left: auto;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: -10px;
+}
+
+.instagram-link:hover {
+  color: #d9d9d9;
+  transform: scale(1.05);
+}
+
+.instagram-icon {
+  width: 36px;
+  height: 36px;
+}
+
 .contacto-mail-link {
-  color: inherit; 
-  text-decoration: none; 
+  color: inherit;
+  text-decoration: none;
   transition: color 0.2s;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 .contacto-mail-link:hover {
-  color: #888; 
-}
-.contacto-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.8); 
-  letter-spacing: 0.5px;
-  pointer-events: none; 
-  padding-bottom: 10px;
-  
-  
-  margin-top: auto; 
+  color: #d9d9d9;
 }
 
+/* Footer: este color solo aplica en la vista de contacto */
+.contacto-page .site-footer {
+  color: #ffffff;
+}
+
+
+/* Pantallas bajas: se compactan los textos para seguir sin scroll */
+@media (min-width: 901px) and (max-height: 760px) {
+  .contacto-field-value p,
+  .contacto-mail-link,
+  .contacto-field-label,
+  .contacto-tagline {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .contacto-footer-nav a {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet y celular: acá sí puede haber scroll */
 @media (max-width: 900px) {
+  .contacto-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .contacto-hero {
+    flex: none;
+    height: 260px;
+  }
+
   .contacto-lower {
     flex-direction: column;
-    padding: 50px 24px 60px;
-    gap: 40px;
+    padding: 40px 24px 70px;
+    gap: 32px;
   }
 
   .contacto-map {
+    flex: none;
     width: 100%;
-    height: 320px;
+    height: 300px;
   }
 
-  .contacto-hero-title {
-    left: 24px;
-    font-size: 2.2rem;
+  .contacto-field-row {
+    gap: 30px;
+  }
+
+  .contacto-field-label {
+    flex: 0 0 120px;
   }
 }
 
 @media (max-width: 560px) {
+  .contacto-tagline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 1.05rem;
+  }
+
+  .contacto-tagline .separator {
+    display: none;
+  }
+
+  .contacto-footer-nav {
+    gap: 10px 22px;
+  }
+
   .contacto-field-row {
     flex-direction: column;
     gap: 6px;
+    position: relative;
   }
 
   .contacto-field-label {
     flex: none;
+  }
+
+  .contacto-field-value p,
+  .contacto-mail-link {
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+  }
+
+  .instagram-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .contacto-hero .contacto-hero-title {
+    left: 1.5rem;
   }
 }
