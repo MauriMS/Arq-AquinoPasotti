@@ -1,0 +1,60 @@
+/* Links de sección: arriba a la derecha, justo debajo del nav,
+   alineados con el selector de idioma (el nav tiene padding lateral de 4rem). */
+.subnav-botones {
+  position: absolute;
+  top: 84px;
+  right: 4rem;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Misma tipografía que .nav-links a */
+.subnav-btn {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;               /* página inactiva: un poco más clara */
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.subnav-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #000000;
+  transition: width 0.3s ease-in-out;
+}
+
+.subnav-btn:hover {
+  color: #000000;
+}
+
+.subnav-btn:hover::after {
+  width: 100%;
+}
+
+/* Página actual: negro y subrayado */
+.subnav-btn.active {
+  color: #000000;
+}
+
+.subnav-btn.active::after {
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .subnav-botones {
+    right: 1.5rem;
+    gap: 20px;
+  }
+}
