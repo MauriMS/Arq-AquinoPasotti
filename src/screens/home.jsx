@@ -10,8 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
 import foto1 from '../assets/1-vista-3d.jpeg'; 
-import foto2 from '../assets/Arq.webp';
-import foto3 from '../assets/Arq1.jpg';
+
 
 function Home() {
   return (
@@ -32,12 +31,12 @@ function Home() {
           <img src={foto1} alt="Obra 1" className="foto-carrusel" />
         </SwiperSlide>
         
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src={foto2} alt="Obra 2" className="foto-carrusel" />
         </SwiperSlide>
         <SwiperSlide>
             <img src={foto3} alt="Obra 3" className="foto-carrusel" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
 
       <footer className="home-footer">
